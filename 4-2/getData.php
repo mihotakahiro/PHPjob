@@ -8,15 +8,13 @@ class getData{
 
     //コンストラクタ
     function __construct()  {
-        $this->pdo = connect();
+        $this->pdo = db_connect();
     }
 
-    /**2
-     * 
-     * 
+    /**
      * ユーザ情報の取得
      *
-     * @param 
+     * @param
      * @return array $users_data ユーザ情報
      */
     public function getUserData(){
@@ -24,11 +22,11 @@ class getData{
         $users_data = $this->pdo->query($getusers_sql)->fetch(PDO::FETCH_ASSOC);
         return $users_data;
     }
-    
+   
     /**
      * 記事情報の取得
      *
-     * @param 
+     * @param
      * @return array $post_data 記事情報
      */
     public function getPostData(){
@@ -37,3 +35,4 @@ class getData{
         return $post_data;
     }
 }
+?>
